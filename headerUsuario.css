@@ -1,0 +1,110 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* 🔹 Grupo izquierdo: iconos + logo + nombre */
+.left-group {
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  max-height: 90px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* 🔹 Iconos en línea */
+.icons {
+  display: flex;
+  gap: 40px;
+}
+
+.icons a {
+  color: rgb(249, 249, 249);
+  font-size: 40px;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#facebook:hover {
+  color: #1444e0;
+}
+
+
+#tiktok:hover {
+  background: linear-gradient(45deg, #c424e4 50%, #6218da 75%, #2600ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+}
+
+#whatsapp:hover {
+  color:  #25D366;
+}
+
+#instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+}
+
+
+#youtube:hover {
+  color: #ff0000;
+}
+
+/* 🔹 Navegación derecha */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  margin-left: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(10, 10, 10);
+  font-size: 25px;
+  position: relative;
+  height: 60px;
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+.nav a:hover::after {
+  width: 100%;
+}
