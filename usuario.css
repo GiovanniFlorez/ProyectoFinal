@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  /* Usa 100vh en lugar de 100% para asegurar altura completa de la ventana */
+  background-image: url('../img/fondo3.jpg');
+  font-family: 'Space Mono', monospace;
+  background-size: cover;
+  /* O prueba con 'cover' si quieres que llene todo sin distorsión */
+  background-position: top center;
+  /* Alinea la parte superior de la imagen */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Evita que la imagen se repita */
+}
+
+/***********************/
+/* este es  el diseño de los horarios y servicos */
+.section {
+  width: 90%;
+  background: rgba(255, 255, 255, 0);
+  ;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin: 60px auto;
+  /* Centra en la página */
+}
+
+/* Estilo para el título dentro de la sección (opcional) */
+.section h3 {
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 35px;
+  margin-bottom: 25px;
+  color: #6431ff;
+}
+
+
+.section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+  background-color: white;
+  overflow-x: auto;
+}
+
+.section th {
+  background-color: #006fd6;
+  color: white;
+  padding: 12px 15px;
+  font-weight: 600;
+  overflow-x: auto;
+}
+
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Hover en filas */
+.section tr:hover {
+  background-color: #e9f1ff;
+}
+
+.carousel-container.section.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blablabla {
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 90%;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.carousel-img {
+  border-radius: 20px;
+  margin: 30px;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  display: none;
+  transition: all 0.4s ease;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-btn.prev {
+  left: 15%;
+}
+
+.carousel-btn.next {
+  right: 15%;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(1);
+}
+
+/******************************************************************************/
+/* Contenedor general */
+.pantalla-completa {
+  width: 100%;
+  height: 100%;
+  /* 100% de la altura de la ventana */
+  display: flex;
+  justify-content: center;
+  /* centra horizontalmente */
+  align-items: center;
+  /* centra verticalmente */
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  /* centra horizontalmente */
+  align-items: center
+}
+
+#horarios {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#horarios-corte {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Título principal */
+.section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: justify;
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Tarjeta de producto */
+.producto-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 24px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.producto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.producto-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 8px;
+}
+
+.producto-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+
+
+
+/* 🔹 Botón login */
+.login-button {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  border-radius: 999px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-family: 'Space Mono', monospace;
+}
+
+#Iniciar {
+  color: white;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+}
+
+.login-button:hover {
+  background-color: #09a9f3;
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.seleccionada {
+  background-color: #e0f7fa !important;
+}
+
+.main {
+  background-color: #afafaf;
+  min-height: 100vh;
+}
+
+/* Aplica los mismos estilos de productos a novedades */
+.novedad-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 24px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.novedad-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+.novedad-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.novedad-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 8px;
+}
+
+.novedad-card p {
+  color: #555;
+  font-size: 0.95rem;
+}

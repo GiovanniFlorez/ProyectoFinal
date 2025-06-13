@@ -1,0 +1,1997 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100vh; /* Usa 100vh en lugar de 100% para asegurar altura completa de la ventana */
+  background-image: url('../img/fondo5.jpg');
+  font-family: 'Space Mono', monospace;
+  background-size: cover; /* O prueba con 'cover' si quieres que llene todo sin distorsión */
+  background-position: top center; /* Alinea la parte superior de la imagen */
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  
+  
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+ 
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+div.logo {
+  color: black;
+  font-size: 30px;
+  font-family: 'Cormorant Garamond', serif;
+
+}
+
+/* 🔹 Navegación derecha */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-left: 20px;
+  padding-top: 3px; /* sube el bloque más arriba */
+  margin-top: 0;      /* elimina margen innecesario */
+}
+
+.nav a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(10, 10, 10);
+  font-size: 25px;
+  position: relative;
+  height: 60px;
+}
+
+.nav a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+}
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+.nav a:hover::after {
+  width: 100%;
+}
+.pantalla-completa {
+    width:100%;
+    height: 100%; /* 100% de la altura de la ventana */
+    display: flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center;     /* centra verticalmente */
+  }
+  
+.container {
+    width: 100%;
+    min-height: 100%;
+    display:flex;
+    justify-content: center; /* centra horizontalmente */
+    align-items: center
+  }
+  
+#horarios {
+    padding: 20px;
+    box-sizing: border-box;
+}
+#horarios-corte{
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 🔹 Botón login */
+.login-button {
+  max-width: 200px;
+  padding: 10px 24px;
+  font-size: 18px;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+}
+
+#cerrarSesion {
+  color: white;
+  text-decoration: none;
+  transition: .3s ease-in-out;
+}
+
+#cerrarSesion:hover {
+  background-color:deepskyblue;
+  
+  padding: 12px 24px;
+ 
+}
+
+header img {
+  max-height: 100px;
+}
+.logo {
+  font-weight: bold;
+  font-size: 60px;
+  display: flex;
+  flex-direction: column;
+}
+/*
+/* este es  el diseño de los horarios y servicos */
+
+/* Estilo para el título dentro de la sección (opcional) */
+.section h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #006fd6;
+}
+
+/* Estilo general para tablas */
+.section table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: left;
+  background-color: #f9f9f9;
+}
+
+/* Encabezados */
+.section th {
+  background-color: #006fd6;
+  color: white;
+  padding: 12px 15px;
+  font-weight: 600;
+  border-bottom: 3px solid #004a99;
+}
+
+/* Filas */
+.section td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  color: #333;
+}
+
+/* Hover en filas */
+.section tr:hover {
+  background-color: #ed0ec1;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 20px;
+  }
+
+  .section table, .section thead, .section tbody, .section th, .section td, .section tr {
+    display: block;
+  }
+
+  .section tr {
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    background: #fff;
+  }
+
+  .section td {
+    padding-left: 50%;
+    position: relative;
+    text-align: right;
+  }
+
+  .section td::before {
+    position: absolute;
+    left: 15px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #006fd6;
+    content: attr(data-label);
+  }
+}
+#citas{
+  width: 90%;
+  background:rgba(255, 255, 255, 0.782);;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin: 60px auto; 
+}
+.section.active {
+  display: block;
+
+}
+.carousel-container.section.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cargarcarousel {
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+}
+.carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-images {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 90%;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.carousel-img {
+  border-radius: 20px;
+  margin: 30px;
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  display: none;
+  transition: all 0.4s ease;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+
+}
+
+.carousel-btn.prev {
+  left: 15%;
+}
+
+.carousel-btn.next {
+  right: 15%;
+}
+
+.carousel-img.active {
+  display: block;
+}
+
+.carousel-img.selected {
+  border: 5px solid #007BFF;
+  transform: scale(1.03);
+  z-index: 2;
+}
+#modificacionCarrusel {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  font-size: 2.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-btn:active {
+  transform: translateY(-50%) scale(1);
+}
+
+#delete-form {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#delete-form button {
+  all: unset; /* Reinicia todos los estilos heredados */
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+}
+
+
+#delete-form button:hover {
+  background-color: rgb(41, 1, 20);
+}
+
+/**************************/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+table th {
+  background-color: #dceeff;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.controls button {
+  background: rgb(58, 59, 59);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* Estilo para los mensajes de error */
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/* Estilo para los mensajes de éxito */
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+.encabezado {
+    text-align: center;
+    margin: 50px 0 20px;
+}
+
+.logo {
+    font-size: 48px;
+    font-weight: bold;
+    color: gold;
+}
+
+h1 {
+    margin: 5px 0;
+    font-size: 42px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    margin: 10px 0 30px;
+    font-size: 20px;
+    color: gray;
+}
+
+
+
+.section.active {
+    display: block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #dceeff;
+}
+/* Contenedor de los botones centrados */
+/* Sección contenedora */
+.section {
+  width: 90%;
+  background:rgba(255, 255, 255, 0.782);;
+  padding: 30px 40px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  margin: 60px auto; /* Centra en la página */
+}
+
+  
+  /* Título principal */
+  .section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  
+  /* Contenedor de botones */
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 32px;
+  }
+  
+  /* Estilo general para los botones */
+  .controls button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Botón Crear */
+  
+  /* Mensaje de éxito */
+  .mensaje-exito {
+    color: #16a34a;
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+/*****************/
+/*****************/
+/* ========== FORMULARIO CREAR PRODUCTO ========== */
+#form-crear-producto {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  max-height: 90vh; /* Nuevo: limita la altura al 90% del alto visible */
+  overflow-y: auto; /* Nuevo: activa scroll si se excede */
+  display: none;
+}
+
+
+#form-crear-producto label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#form-crear-producto input[type="text"],
+#form-crear-producto input[type="number"],
+#form-crear-producto input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#form-crear-producto input:focus {
+  border-color: #008cff;
+  outline: none;
+}
+
+#form-crear-producto .btn,
+#form-crear-producto .btn_cancelar {
+  width: 48%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form-crear-producto .btn {
+  background-color: #008cff;
+  color: white;
+  margin-right: 4%;
+}
+
+#form-crear-producto .btn:hover {
+  background-color: #006fd6;
+}
+
+#form-crear-producto .btn_cancelar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#form-crear-producto .btn_cancelar:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+  #form-crear-producto {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #form-crear-producto .btn,
+  #form-crear-producto .btn_cancelar {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* ========== FORMULARIO MODIFICAR PRODUCTO ========== */
+#tabla-modificacion-producto {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  max-height: 90vh; /* Nuevo: limita la altura al 90% del alto visible */
+  overflow-y: auto; /* Nuevo: activa scroll si se excede */
+  display: none;
+}
+
+#tabla-modificacion-producto h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#tabla-modificacion-producto label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#tabla-modificacion-producto input[type="text"],
+#tabla-modificacion-producto input[type="number"],
+#tabla-modificacion-producto input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#tabla-modificacion-producto input:focus {
+  border-color: #008cff;
+  outline: none;
+}
+
+#tabla-modificacion-producto .btn,
+#tabla-modificacion-producto .btn_cancelar {
+  width: 48%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#tabla-modificacion-producto .btn {
+  background-color: #008cff;
+  color: white;
+  margin-right: 4%;
+}
+
+#tabla-modificacion-producto .btn:hover {
+  background-color: #006fd6;
+}
+
+#tabla-modificacion-producto .btn_cancelar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#tabla-modificacion-producto .btn_cancelar:hover {
+  background-color: #c0392b;
+}
+
+#tabla-modificacion-producto #edit-imagen-actual {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 400px) {
+  #tabla-modificacion-producto {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #tabla-modificacion-producto .btn,
+  #tabla-modificacion-producto .btn_cancelar {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* ========== GRID DE PRODUCTOS ========== */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 24px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ========== TARJETA DE PRODUCTO ========== */
+.producto-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 24px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.producto-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+.producto-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.producto-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 8px;
+}
+
+.producto-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ========== ESTADOS DE SELECCIÓN ========== */
+.seleccionada {
+  background-color: #ebfae0 !important;
+}
+
+.producto-card.seleccionado {
+  border: 2px solid #398ae6;
+  background-color: #f0f8ff;
+}
+/*************************************************************************************************/
+/**************losmalditosformulariosdenovedades********************/
+/* ========== FORMULARIO CREAR NOVEDADES ========== */
+#form-crear-novedades {
+ position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  max-height: 90vh; /* Nuevo: limita la altura al 90% del alto visible */
+  overflow-y: auto; /* Nuevo: activa scroll si se excede */
+  display: none;
+}
+
+#form-crear-novedades label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#form-crear-novedades input[type="text"],
+#form-crear-novedades input[type="number"],
+#form-crear-novedades input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#form-crear-novedades input:focus {
+  border-color: #008cff;
+  outline: none;
+}
+
+#form-crear-novedades .btn,
+#form-crear-novedades .btn_cancelar {
+  width: 48%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form-crear-novedades .btn {
+  background-color: #008cff;
+  color: white;
+  margin-right: 4%;
+}
+
+#form-crear-novedades .btn:hover {
+  background-color: #006fd6;
+}
+
+#form-crear-novedades .btn_cancelar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#form-crear-novedades .btn_cancelar:hover {
+  background-color: #c0392b;
+}
+
+@media screen and (max-width: 400px) {
+  #form-crear-novedades {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #form-crear-novedades .btn,
+  #form-crear-novedades .btn_cancelar {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+/* ========== FORMULARIO MODIFICAR NOVEDADES ========== */
+#tabla-modificacion-novedad {
+ position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  max-height: 90vh; /* Nuevo: limita la altura al 90% del alto visible */
+  overflow-y: auto; /* Nuevo: activa scroll si se excede */
+  display: none;
+}
+
+#tabla-modificacion-novedad h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#tabla-modificacion-novedad label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#tabla-modificacion-novedad input[type="text"],
+#tabla-modificacion-novedad input[type="number"],
+#tabla-modificacion-novedad input[type="file"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#tabla-modificacion-novedad input:focus {
+  border-color: #008cff;
+  outline: none;
+}
+
+#tabla-modificacion-novedad .btn,
+#tabla-modificacion-novedad .btn_cancelar {
+  width: 48%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#tabla-modificacion-novedad .btn {
+  background-color: #008cff;
+  color: white;
+  margin-right: 4%;
+}
+
+#tabla-modificacion-novedad .btn:hover {
+  background-color: #006fd6;
+}
+
+#tabla-modificacion-novedad .btn_cancelar {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#tabla-modificacion-novedad .btn_cancelar:hover {
+  background-color: #c0392b;
+}
+
+#tabla-modificacion-novedad #vista-previa {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 400px) {
+  #tabla-modificacion-novedad {
+    width: 90%;
+    padding: 20px;
+  }
+
+  #tabla-modificacion-novedad .btn,
+  #tabla-modificacion-novedad .btn_cancelar {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+/******************seleccionarnoveda***************************/
+
+
+
+/* Aplica los mismos estilos de productos a novedades */
+.novedad-card {
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  padding: 24px;
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.novedad-card.seleccionado {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+  border: 2px solid #007BFF;
+  position: relative;
+  z-index: 10;
+}
+
+.novedad-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.15);
+}
+
+.novedad-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.novedad-card h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2d2d2d;
+  margin-bottom: 8px;
+}
+
+.novedad-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/**********************************************/  
+button {
+  max-width: 150px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Mono', monospace;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+button:hover {
+  background-color: #09a9f3;
+  color: black;
+}
+
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+/*///////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* diseño para el formulario de editar horario_corte*/
+
+#tabla-modificacion-horario-corte {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 350px;
+    max-width: 90%;
+    display: none;
+}
+
+/* Título */
+#tabla-modificacion-horario-corte h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas */
+#tabla-modificacion-horario-corte label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+/* Campos de entrada */
+#tabla-modificacion-horario-corte input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-modificacion-horario-corte input:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+/* Botones */
+#tabla-modificacion-horario-corte .btn,
+#tabla-modificacion-horario-corte .btn_cancelar {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Confirmar cambios */
+#tabla-modificacion-horario-corte .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-modificacion-horario-corte .btn:hover {
+    background-color: #006fd6;
+}
+
+/* Cancelar cambios */
+#tabla-modificacion-horario-corte .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-modificacion-horario-corte .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+    #tabla-modificacion-horario-corte {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #tabla-modificacion-horario-corte .btn,
+    #tabla-modificacion-horario-corte .btn_cancelar {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* diseño para crear un nuevo horario maniciu*/
+
+/* Estilo general para el formulario */
+#tabla-nuevo-horario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 350px;
+    max-width: 90%;
+    display: none;
+}
+
+/* Título */
+#tabla-nuevo-horario h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas */
+#tabla-nuevo-horario label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+/* Campos de entrada */
+#tabla-nuevo-horario input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-nuevo-horario input:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+/* Botones */
+#tabla-nuevo-horario .btn,
+#tabla-nuevo-horario .btn_cancelar {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Confirmar */
+#tabla-nuevo-horario .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-nuevo-horario .btn:hover {
+    background-color: #006fd6;
+}
+
+/* Cancelar */
+#tabla-nuevo-horario .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-nuevo-horario .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+    #tabla-nuevo-horario {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #tabla-nuevo-horario .btn,
+    #tabla-nuevo-horario .btn_cancelar {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* diseño para el formulario de crar horario-cortes */
+/* Estilo general para el formulario */
+#tabla-nuevo-horario-corte {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 350px;
+    max-width: 90%;
+    display: none;
+}
+
+/* Título */
+#tabla-nuevo-horario-corte h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Etiquetas */
+#tabla-nuevo-horario-corte label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+/* Campos de entrada */
+#tabla-nuevo-horario-corte input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-nuevo-horario-corte input:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+/* Botones */
+#tabla-nuevo-horario-corte .btn,
+#tabla-nuevo-horario-corte .btn_cancelar {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Confirmar */
+#tabla-nuevo-horario-corte .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-nuevo-horario-corte .btn:hover {
+    background-color: #006fd6;
+}
+
+/* Cancelar */
+#tabla-nuevo-horario-corte .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-nuevo-horario-corte .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive */
+@media screen and (max-width: 400px) {
+    #tabla-nuevo-horario-corte {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #tabla-nuevo-horario-corte .btn,
+    #tabla-nuevo-horario-corte .btn_cancelar {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/* diseño formulario de crear servicio */
+
+footer {
+    height: 40px;
+    margin-top: 20px;
+}
+/****========================= */
+/* =========================/
+/* Estilos compartidos para ambos formularios emergentes */
+#formulario-nuevo-manicure,
+#formulario-nuevo-corte {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  height: 450px;
+  max-width: 90%;
+  display: none;
+}
+
+/* Inputs y etiquetas */
+#formulario-nuevo-manicure label,
+#formulario-nuevo-corte label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#formulario-nuevo-manicure input[type="time"],
+#formulario-nuevo-corte input[type="time"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Fade-in y fade-out */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+tr.seleccionado {
+  background-color: #f75fde !important;
+  cursor: pointer;
+}
+/* Estilo del formulario de edición */
+#formulario-editar-horario {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  display: none;
+}
+
+/* Etiquetas e inputs consistentes */
+#formulario-editar-horario label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#formulario-editar-horario input[type="time"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+/* Estilo del formulario de edición para horarios corte */
+#formulario-editar-horario-corte {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  display: none;
+}
+
+#formulario-editar-horario-corte label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#formulario-editar-horario-corte input[type="time"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Fade-in y fade-out para animar */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+/* ========== Estilos para la tabla de citas agendadas ========== */
+#citas table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#citas th,
+#citas td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+#citas thead {
+  background-color: #f0f0f0;
+}
+
+/* ========== Estilos para el formulario de crear cita ========== */
+#form-crear-citas {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  width: 450px;
+  max-width: 90%;
+  display: none;
+}
+
+#form-crear-citas label {
+  font-weight: 600;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+#form-crear-citas input[type="text"],
+#form-crear-citas input[type="number"],
+#form-crear-citas input[type="file"],
+#form-crear-citas select,
+#form-crear-citas textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+#form-crear-citas button {
+  padding: 6px 12px;
+  margin-right: 8px;
+}
+
+/* ========== Animaciones para mostrar/ocultar el formulario ========== */
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+
+
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+/* ===== Diseño formulario NUEVO usuario ===== */
+#tabla-nuevo-usuario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 40px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    width: 450px;
+    max-width: 95%;
+    display: none;
+    font-size: 16px;
+}
+
+#tabla-nuevo-usuario h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+#tabla-nuevo-usuario label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 15px;
+}
+
+#tabla-nuevo-usuario input[type="text"],
+#tabla-nuevo-usuario select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-nuevo-usuario input:focus,
+#tabla-nuevo-usuario select:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+#tabla-nuevo-usuario .btn,
+#tabla-nuevo-usuario .btn_cancelar {
+    width: 48%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tabla-nuevo-usuario .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-nuevo-usuario .btn:hover {
+    background-color: #006fd6;
+}
+
+#tabla-nuevo-usuario .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-nuevo-usuario .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+@media screen and (max-width: 500px) {
+    #tabla-nuevo-usuario {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    #tabla-nuevo-usuario .btn,
+    #tabla-nuevo-usuario .btn_cancelar {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* ===== Diseño formulario EDITAR usuario ===== */
+#tabla-editar-usuario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 40px 40px;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    width: 450px;
+    max-width: 95%;
+    display: none;
+    font-size: 16px;
+}
+
+#tabla-editar-usuario h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+#tabla-editar-usuario label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+    font-size: 15px;
+}
+
+#tabla-editar-usuario input[type="text"],
+#tabla-editar-usuario select {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-editar-usuario input:focus,
+#tabla-editar-usuario select:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+#tabla-editar-usuario input[readonly] {
+    background-color: #f3f3f3;
+    cursor: not-allowed;
+}
+
+#tabla-editar-usuario .btn,
+#tabla-editar-usuario .btn_cancelar {
+    width: 48%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tabla-editar-usuario .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-editar-usuario .btn:hover {
+    background-color: #006fd6;
+}
+
+#tabla-editar-usuario .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-editar-usuario .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+@media screen and (max-width: 500px) {
+    #tabla-editar-usuario {
+        width: 90%;
+        padding: 30px 20px;
+    }
+
+    #tabla-editar-usuario .btn,
+    #tabla-editar-usuario .btn_cancelar {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+
+/* ===== Diseño formulario NUEVO usuario ===== */
+#tabla-nuevo-usuario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 350px;
+    max-width: 90%;
+    display: none;
+}
+
+#tabla-nuevo-usuario h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#tabla-nuevo-usuario label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+#tabla-nuevo-usuario input[type="text"],
+#tabla-nuevo-usuario select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-nuevo-usuario input:focus,
+#tabla-nuevo-usuario select:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+#tabla-nuevo-usuario .btn,
+#tabla-nuevo-usuario .btn_cancelar {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tabla-nuevo-usuario .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-nuevo-usuario .btn:hover {
+    background-color: #006fd6;
+}
+
+#tabla-nuevo-usuario .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-nuevo-usuario .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+@media screen and (max-width: 400px) {
+    #tabla-nuevo-usuario {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #tabla-nuevo-usuario .btn,
+    #tabla-nuevo-usuario .btn_cancelar {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* ===== Diseño formulario EDITAR usuario ===== */
+#tabla-editar-usuario {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 350px;
+    max-width: 90%;
+    display: none;
+}
+
+#tabla-editar-usuario h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#tabla-editar-usuario label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+#tabla-editar-usuario input[type="text"],
+#tabla-editar-usuario select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+#tabla-editar-usuario input:focus,
+#tabla-editar-usuario select:focus {
+    border-color: #008cff;
+    outline: none;
+}
+
+#tabla-editar-usuario input[readonly] {
+    background-color: #f3f3f3;
+    cursor: not-allowed;
+}
+
+#tabla-editar-usuario .btn,
+#tabla-editar-usuario .btn_cancelar {
+    width: 48%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#tabla-editar-usuario .btn {
+    background-color: #008cff;
+    color: white;
+    margin-right: 4%;
+}
+
+#tabla-editar-usuario .btn:hover {
+    background-color: #006fd6;
+}
+
+#tabla-editar-usuario .btn_cancelar {
+    background-color: #e74c3c;
+    color: white;
+}
+
+#tabla-editar-usuario .btn_cancelar:hover {
+    background-color: #c0392b;
+}
+
+@media screen and (max-width: 400px) {
+    #tabla-editar-usuario {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #tabla-editar-usuario .btn,
+    #tabla-editar-usuario .btn_cancelar {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+.scroll-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* Scrollbar estilizado */
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+.scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+.scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
